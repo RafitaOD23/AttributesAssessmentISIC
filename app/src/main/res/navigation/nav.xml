@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@id/Home">
+
+    <activity
+        android:id="@+id/Login"
+        android:name="com.itsoeh.jortiz.proyectoaaisic.Login"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" >
+    </activity>
+    <fragment
+        android:id="@+id/Home"
+        android:name="com.itsoeh.jortiz.proyectoaaisic.Home"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_Home_to_Asignaturas"
+            app:destination="@id/Asignaturas" />
+        <action
+            android:id="@+id/action_Home_to_notificaciones2"
+            app:destination="@id/notificaciones" />
+        <action
+            android:id="@+id/action_Home_to_buscarCurso"
+            app:destination="@id/buscarCurso" />
+        <action
+            android:id="@+id/action_Home_to_Configuracion"
+            app:destination="@id/Configuracion" />
+    </fragment>
+    <fragment
+        android:id="@+id/Configuracion"
+        android:name="com.itsoeh.jortiz.proyectoaaisic.Configuracion"
+        android:label="fragment_configuracion"
+        tools:layout="@layout/fragment_configuracion" >
+        <action
+            android:id="@+id/action_Configuracion_to_CambiarNombre"
+            app:destination="@id/CambiarNombre" />
+        <action
+            android:id="@+id/action_Configuracion_to_CambiarPassword"
+            app:destination="@id/CambiarPassword" />
+        <action
+            android:id="@+id/action_Configuracion_to_CambiarCorreo"
+            app:destination="@id/CambiarCorreo" />
+        <action
+            android:id="@+id/action_Configuracion_to_About"
+            app:destination="@id/About" />
+    </fragment>
+    <fragment
+        android:id="@+id/Asignaturas"
+        android:name="com.itsoeh.jortiz.proyectoaaisic.Asignaturas"
+        android:label="fragment_asignaturas"
+        tools:layout="@layout/fragment_asignaturas" >
+        <action
+            android:id="@+id/action_Asignaturas_to_buscarCurso"
+            app:destination="@id/buscarCurso" />
+        <action
+            android:id="@+id/action_Asignaturas_to_Configuracion"
+            app:destination="@id/Configuracion" />
+        <action
+            android:id="@+id/action_Asignaturas_to_atributos_menu"
+            app:destination="@id/atributos_menu" />
+    </fragment>
+    <fragment
+        android:id="@+id/CambiarNombre"
+        android:name="com.itsoeh.jortiz.proyectoaaisic.Configuracion"
+        android:label="fragment_cambiar_nombre"
+        tools:layout="@layout/activity_cambiar_nombre" />
+    <fragment
+        android:id="@+id/CambiarCorreo"
+        android:name="com.itsoeh.jortiz.proyectoaaisic.Configuracion"
+        android:label="fragment_cambiar_correo"
+        tools:layout="@layout/activity_cambiar_correo" />
+    <fragment
+        android:id="@+id/CambiarPassword"
+        android:name="com.itsoeh.jortiz.proyectoaaisic.Configuracion"
+        android:label="fragment_cambiar_password"
+        tools:layout="@layout/activity_cambiar_password" />
+    <fragment
+        android:id="@+id/About"
+        android:name="com.itsoeh.jortiz.proyectoaaisic.Configuracion"
+        android:label="fragment_about"
+        tools:layout="@layout/activity_about" />
+    <fragment
+        android:id="@+id/notificaciones"
+        android:name="com.itsoeh.jortiz.proyectoaaisic.Notificacion"
+        android:label="fragment_notificaciones"
+        tools:layout="@layout/fragment_notificacion" >
+        <action
+            android:id="@+id/action_notificaciones2_to_buscarCurso"
+            app:destination="@id/buscarCurso" />
+        <action
+            android:id="@+id/action_notificaciones_to_Configuracion"
+            app:destination="@id/Configuracion" />
+    </fragment>
+    <fragment
+        android:id="@+id/buscarCurso"
+        android:name="com.itsoeh.jortiz.proyectoaaisic.BuscarCurso"
+        android:label="fragment_buscar_curso"
+        tools:layout="@layout/fragment_buscar_curso" >
+        <action
+            android:id="@+id/action_buscarCurso_to_Configuracion"
+            app:destination="@id/Configuracion" />
+    </fragment>
+    <fragment
+        android:id="@+id/atributos_menu"
+        android:name="com.itsoeh.jortiz.proyectoaaisic.atributos_menu"
+        android:label="fragment_atributos_menu"
+        tools:layout="@layout/fragment_atributos_menu" />
+</navigation>
