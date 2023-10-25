@@ -8,6 +8,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.itsoeh.jortiz.proyectoaaisic.models.MListaAsignaturas;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Asignaturas#newInstance} factory method to
@@ -61,4 +66,5 @@ public class Asignaturas extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_asignaturas, container, false);
     }
+
 }

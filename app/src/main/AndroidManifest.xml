@@ -13,6 +13,9 @@
         android:theme="@style/Theme.EvaluacionAE"
         tools:targetApi="31">
         <activity
+            android:name=".buscarAsignaturas"
+            android:exported="false" />
+        <activity
             android:name=".EvalAtributtes"
             android:exported="false" />
         <activity

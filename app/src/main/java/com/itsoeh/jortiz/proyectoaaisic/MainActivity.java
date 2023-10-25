@@ -1,14 +1,21 @@
 package com.itsoeh.jortiz.proyectoaaisic;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.itsoeh.jortiz.proyectoaaisic.models.MListaAsignaturas;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity
         implements BottomNavigationView
         .OnNavigationItemSelectedListener {
-
     BottomNavigationView bottomNavigationView;
 
     @Override
@@ -66,13 +73,14 @@ public class MainActivity extends AppCompatActivity
                 return true;
 
             case R.id.buscarcursos:
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.fragmentContainerView, buscarCurso)
-                        .commit();
+                Intent intent = new Intent(this, buscarAsignaturas.class);
+                startActivity(intent);
                 return true;
+
 
         }
         return false;
     }
+
+
 }
