@@ -1,67 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_margin="8dp"
+app:cardCornerRadius="8dp"
+android:id="@+id/item_asignatura"
+app:cardElevation="4dp">
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/item_asignatura"
-    android:layout_margin="5dp">
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:background="@drawable/boton_asi"
+    android:layout_gravity="center">
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="60dp"
+        android:src="@drawable/icon_asignatura"
+        android:contentDescription="Asignatura"
+        android:layout_gravity="center"/>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/boton_asi"
-        android:padding="5dp"
-        android:orientation="horizontal">
+        android:layout_weight="3"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp">
 
-        <LinearLayout
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/asi_txt_nom"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_gravity="center"
-            android:layout_weight="1">
+            android:text="Nombre de la Asignatura"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="16sp"
+            android:textColor="@color/black2"
+            android:textStyle="bold" />
 
-            <ImageView
-                android:layout_width="75dp"
-                android:layout_height="75dp"
-                android:src="@drawable/icon_asig" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/asi_txt_doc"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:text="Nombre del docente"
+            android:textColor="@color/black2"
+            android:fontFamily="@font/poppins_regular"
+            android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/asi_txt_nom"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins_semibold"
-                android:paddingTop="5dp"
-                android:paddingHorizontal="5dp"
-                android:text="Asignatura"
-                android:textColor="@color/black2"
-                android:textSize="20sp" />
+        <TextView
+            android:id="@+id/asi_txt_cod"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clave de la asignatura"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/black2"
+            android:textSize="14sp" />
 
-            <TextView
-                android:id="@+id/asi_txt_doc"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="5dp"
-                android:text="Nombre del profesor(a)"
-                android:fontFamily="@font/poppins_regular"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/asi_txt_cod"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="5dp"
-                android:paddingBottom="5dp"
-                android:text="Clave del asignatura"
-                android:fontFamily="@font/poppins_regular"
-                android:textSize="16sp" />
-        </LinearLayout>
     </LinearLayout>
+
+    <!-- LinearLayout vertical para "Editar" y "Lupa" -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="12dp">
+
+        <!-- ImageView para "Editar" -->
+        <ImageView
+            android:id="@+id/itemasi_agg"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:src="@drawable/mas_asig"
+            android:contentDescription="Editar" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
+
 </androidx.cardview.widget.CardView>

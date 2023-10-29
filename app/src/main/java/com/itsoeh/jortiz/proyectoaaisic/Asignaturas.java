@@ -1,12 +1,18 @@
 package com.itsoeh.jortiz.proyectoaaisic;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import com.itsoeh.jortiz.proyectoaaisic.models.MListaAsignaturas;
 
@@ -19,6 +25,8 @@ import java.util.List;
  * create an instance of this fragment.
  */
 public class Asignaturas extends Fragment {
+    private NavController nav;
+    private ImageView btn_aggCur;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -67,4 +75,20 @@ public class Asignaturas extends Fragment {
         return inflater.inflate(R.layout.fragment_asignaturas, container, false);
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        btn_aggCur = view.findViewById(R.id.agg_btn_cur);
+        btn_aggCur.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickAgregarCurso();
+            }
+        });
+    }
+
+    private void clickAgregarCurso() {
+        Intent intent = new Intent(getActivity(), buscarAsignaturas.class);
+        startActivity(intent);
+    }
 }

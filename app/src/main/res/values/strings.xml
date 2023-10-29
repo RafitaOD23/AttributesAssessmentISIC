@@ -50,7 +50,7 @@
     <string name="login">Login</string>
     <string name="completa_estos_datos">Completa estos datos.</string>
     <string name="regresar_al_inicio">Regresar al Inicio</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="agregar_asignatura">Agregar \n asignatura</string>    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

@@ -34,10 +34,7 @@ public class MainActivity extends AppCompatActivity
     Home home = new Home();
     Configuracion configuracion = new Configuracion();
     Notificacion notificacion = new Notificacion();
-
     Asignaturas asignaturas = new Asignaturas();
-    BuscarCurso buscarCurso = new BuscarCurso();
-
 
     @Override
     public boolean
@@ -71,13 +68,6 @@ public class MainActivity extends AppCompatActivity
                        .replace(R.id.fragmentContainerView, asignaturas)
                        .commit();
                 return true;
-
-            case R.id.buscarcursos:
-                Intent intent = new Intent(this, buscarAsignaturas.class);
-                startActivity(intent);
-                return true;
-
-
         }
         return false;
     }

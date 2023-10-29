@@ -14,10 +14,6 @@ Descripción: Layout del bottom menú
         android:title="Asignaturas"
         android:icon="@mipmap/menu_cursos"/>
     <item
-        android:id="@+id/buscarcursos"
-        android:title="Busqueda"
-        android:icon="@mipmap/menu_foundcursos"/>
-    <item
         android:id="@+id/notificaciones"
         android:title="Notificaciones"
         android:icon="@mipmap/menu_noti"/>

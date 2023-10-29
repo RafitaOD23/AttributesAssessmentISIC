@@ -1,10 +1,13 @@
 package com.itsoeh.jortiz.proyectoaaisic;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.graphics.Rect;
 import android.os.Bundle;
+import android.view.View;
 
 import com.itsoeh.jortiz.proyectoaaisic.models.MListaAsignaturas;
 
@@ -36,7 +39,19 @@ public class buscarAsignaturas extends AppCompatActivity {
         ListaAsignatura listaAsignatura = new ListaAsignatura(elements, this);
         RecyclerView recyclerView = findViewById(R.id.rec_listasinaturas);
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new GridLayoutManager(this,1));
+
+        int espaciado = getResources().getDimensionPixelSize(R.dimen.space_element);
+        recyclerView.addItemDecoration(new RecyclerView.ItemDecoration() {
+            @Override
+            public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
+                outRect.left = espaciado;
+                outRect.right = espaciado;
+                outRect.top = espaciado;
+                outRect.bottom = espaciado;
+            }
+        });
+
         recyclerView.setAdapter(listaAsignatura);
     }
 }
