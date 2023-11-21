@@ -1,5 +1,7 @@
 package com.itsoeh.jortiz.proyectoaaisic;
 
+import static android.app.Activity.RESULT_OK;
+
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -27,6 +29,7 @@ import java.util.List;
 public class Asignaturas extends Fragment {
     private NavController nav;
     private ImageView btn_aggCur;
+    private List<MListaAsignaturas> elements;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -89,6 +92,22 @@ public class Asignaturas extends Fragment {
 
     private void clickAgregarCurso() {
         Intent intent = new Intent(getActivity(), buscarAsignaturas.class);
-        startActivity(intent);
+        startActivityForResult(intent, 1);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                String nombreAsignatura = data.getStringExtra("asignatura");
+                String nombreDocente = data.getStringExtra("idDocente");
+                String claveAsignatura = data.getStringExtra("claveAsignatura");
+
+                elements.add(new MListaAsignaturas(nombreAsignatura, nombreDocente, claveAsignatura));
+                // Aquí debes notificar a tu adaptador que los datos han cambiado
+            }
+        }
     }
 }

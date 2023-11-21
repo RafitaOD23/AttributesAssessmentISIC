@@ -65,7 +65,7 @@ Descripción: Layout de fragment asignaturas
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/agregarcurso"
+                        android:src="@drawable/buscar_asi"
                         />
                 </LinearLayout>
             </LinearLayout>

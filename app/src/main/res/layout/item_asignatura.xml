@@ -76,7 +76,7 @@ app:cardElevation="4dp">
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_gravity="center"
-            android:src="@drawable/mas_asig"
+            android:src="@drawable/add_asi2"
             android:contentDescription="Editar" />
 
 

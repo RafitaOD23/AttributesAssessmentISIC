@@ -18,11 +18,13 @@ public class ListaAsignatura extends RecyclerView.Adapter<ListaAsignatura.ViewHo
     private List<MListaAsignaturas> mData;
     private LayoutInflater mInflater;
     private Context context;
+    private buscarAsignaturas.OnAsignaturaSelectedListener listener;
 
-    public ListaAsignatura(List<MListaAsignaturas> itemList, Context context) {
+    public ListaAsignatura(List<MListaAsignaturas> itemList, Context context, buscarAsignaturas.OnAsignaturaSelectedListener listener) {
         this.mInflater = LayoutInflater.from(context);
         this.context = context;
         this.mData = itemList;
+        this.listener = listener;
     }
 
     @Override
@@ -43,13 +45,26 @@ public class ListaAsignatura extends RecyclerView.Adapter<ListaAsignatura.ViewHo
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView nombreA, docenteA, claveA;
+        ImageView imageView;
 
         ViewHolder(View itemview) {
             super(itemview);
             nombreA = itemview.findViewById(R.id.asi_txt_nom);
             docenteA = itemview.findViewById(R.id.asi_txt_doc);
             claveA = itemview.findViewById(R.id.asi_txt_cod);
+            imageView = itemview.findViewById(R.id.itemasi_agg);
+
+            imageView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (listener != null) {
+                        MListaAsignaturas asignatura = mData.get(getAdapterPosition());
+                        listener.onAsignaturaSelected(asignatura);
+                    }
+                }
+            });
         }
+
         void bindData(final MListaAsignaturas item){
             nombreA.setText(item.getNombreA());
             docenteA.setText(item.getDocenteA());
