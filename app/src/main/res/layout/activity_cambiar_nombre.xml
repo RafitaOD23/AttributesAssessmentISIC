@@ -107,11 +107,11 @@ Descripción: Layout de fragment cambiar correo
                             android:layout_marginTop="30dp"
                             android:drawableEnd="@drawable/ic_person_outline"
                             android:fontFamily="@font/cairo_light"
-                            android:hint="Ingrese nombre anterior"
+                            android:hint="Ingrese nombre nuevo"
                             android:inputType="textAutoComplete"
                             android:padding="15dp"
                             android:textSize="20sp"
-                            android:id="@+id/old_name"
+                            android:id="@+id/chaname_txt_nombre"
                             tools:ignore="Autofill" />
 
                         <EditText
@@ -122,11 +122,11 @@ Descripción: Layout de fragment cambiar correo
                             android:layout_marginBottom="50dp"
                             android:drawableEnd="@drawable/ic_person_outline"
                             android:fontFamily="@font/cairo_light"
-                            android:hint="Ingrese nuevo nombre"
+                            android:hint="Ingrese apellidos nuevo"
                             android:inputType="textAutoComplete"
                             android:padding="15dp"
                             android:textSize="20sp"
-                            android:id="@+id/new_name"
+                            android:id="@+id/chaname_txt_apellidos"
                             tools:ignore="Autofill" />
 
                         <LinearLayout
@@ -137,7 +137,7 @@ Descripción: Layout de fragment cambiar correo
                             android:gravity="center">
 
                             <Button
-                                android:id="@+id/chaemail_btn_guardar"
+                                android:id="@+id/chaname_btn_guardar"
                                 android:layout_width="300sp"
                                 android:layout_height="wrap_content"
                                 android:text="Guardar Cambios"

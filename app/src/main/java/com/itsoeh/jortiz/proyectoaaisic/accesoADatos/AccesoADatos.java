@@ -25,6 +25,7 @@ public class AccesoADatos extends SQLiteOpenHelper {
 
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS asignatura("+
                 "idAsignaturas INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "asignatura TEXT," +
                 "claveAsignatura TEXT," +
                 "claveGrupo TEXT," +
                 "codigoAsignatura TEXT UNIQUE," +
@@ -43,9 +44,16 @@ public class AccesoADatos extends SQLiteOpenHelper {
                 "nombre TEXT," +
                 "apellido TEXT," +
                 "correo TEXT,"+
-                "matricula TEXT UNIQUE,"+
-                "codigoAsignatura INT,"+
+                "matricula INTEGER UNIQUE," +
+                "password TEXT)");
+
+
+        sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS estudiante_asignatura("+
+                "idEstudiante INTEGER," +
+                "codigoAsignatura TEXT," +
+                "FOREIGN KEY (idEstudiante) REFERENCES estudiante(idEstudiante)," +
                 "FOREIGN KEY (codigoAsignatura) REFERENCES asignatura(codigoAsignatura))");
+
 
         sqLiteDatabase.execSQL("CREATE TABLE IF NOT EXISTS criteriosEval("+
                 "idCriterio INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -64,6 +72,8 @@ public class AccesoADatos extends SQLiteOpenHelper {
                 "FOREIGN KEY (idCriterio) REFERENCES criteriosEval(idCriterio))");
 
     }
+
+
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {

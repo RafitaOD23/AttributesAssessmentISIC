@@ -111,7 +111,7 @@ Descripción: Layout de fragment cambiar correo
                             android:inputType="textEmailAddress"
                             android:padding="15dp"
                             android:textSize="20sp"
-                            android:id="@+id/cambiar_correo"
+                            android:id="@+id/chaemail_txt_oldemail"
                             tools:ignore="Autofill" />
 
                         <EditText
@@ -126,7 +126,7 @@ Descripción: Layout de fragment cambiar correo
                             android:inputType="textEmailAddress"
                             android:padding="15dp"
                             android:textSize="20sp"
-                            android:id="@+id/nuevo_cambiar_correo"
+                            android:id="@+id/chaemail_txt_newemail"
                             tools:ignore="Autofill" />
 
                         <LinearLayout

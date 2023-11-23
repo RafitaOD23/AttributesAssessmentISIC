@@ -62,8 +62,8 @@ Descripción: Layout de fragment asignaturas
                     >
                     <ImageView
                         android:id="@+id/agg_btn_cur"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
+                        android:layout_width="45dp"
+                        android:layout_height="45dp"
                         android:layout_gravity="center"
                         android:src="@drawable/buscar_asi"
                         />
@@ -88,6 +88,7 @@ Descripción: Layout de fragment asignaturas
             >
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rec_list_asig"
+                android:visibility="visible"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
