@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <ImageButton
+        android:id="@+id/back_asi_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/back_dialog"
+        android:padding="5dp"
+        android:background="@drawable/new_boton_degradado2"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textColor="@color/black2"
+        android:text="Pídele a tu profesor el código de la asignatura y, luego, ingrésalo aquí!"
+        android:fontFamily="@font/cairo_light"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/input"
+        style="@style/EditTextGeneral"
+        android:hint="Ingresa codigo..."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text" />
+
+    <Button
+        android:id="@+id/button_unirte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:fontFamily="@font/poppins_regular"
+        android:textColor="@color/white"
+        android:background="@drawable/new_boton_degradado"
+        android:text="Unirte" />
+
+</LinearLayout>

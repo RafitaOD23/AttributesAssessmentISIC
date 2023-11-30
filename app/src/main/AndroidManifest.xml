@@ -8,14 +8,22 @@
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fitsSystemWindows="true"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/logo_prin"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/net"
         android:roundIcon="@drawable/logo_prin"
         android:supportsRtl="true"
         android:theme="@style/Theme.EvaluacionAE"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".Calificaciones_Atributos"
+            android:exported="false" />
+        <activity
+            android:name=".Asignatura"
+            android:exported="false" />
         <activity
             android:name=".Calificaciones"
             android:exported="false" />

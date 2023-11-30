@@ -37,6 +37,8 @@ dependencies {
     implementation ("androidx.navigation:navigation-fragment:2.5.2")
     implementation ("androidx.navigation:navigation-ui:2.5.2")
     implementation("com.google.android.material:material:1.3.0")
+    implementation ("com.sun.mail:android-mail:1.6.5")
+    implementation ("com.sun.mail:android-activation:1.6.5")
     testImplementation ("junit:junit:4.13.2")
     androidTestImplementation ("androidx.test.ext:junit:1.1.5")
     androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.1")

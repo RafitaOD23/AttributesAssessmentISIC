@@ -98,4 +98,12 @@ public class AEstudiante extends AccesoADatos {
             return false;
         }
     }
+
+    public boolean actualizarPasswordSinVerificarEstudiante(String correo, String passwordNuevo){
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("password", passwordNuevo);
+        int filasActualizadas = db.update("estudiante", contentValues, "correo = ?", new String[]{String.valueOf(correo)});
+        return filasActualizadas > 0;
+    }
 }

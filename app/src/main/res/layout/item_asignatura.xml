@@ -7,7 +7,7 @@ android:layout_width="match_parent"
 android:layout_height="wrap_content"
 android:layout_margin="8dp"
 app:cardCornerRadius="8dp"
-android:id="@+id/item_asignatura"
+android:id="@+id/itemasig_item_click"
 app:cardElevation="4dp">
 
 <LinearLayout
@@ -19,6 +19,7 @@ app:cardElevation="4dp">
     android:layout_gravity="center">
 
     <ImageView
+        android:id="@+id/itemasig_img_asig"
         android:layout_width="70dp"
         android:layout_height="60dp"
         android:src="@drawable/icon_asignatura"
@@ -33,7 +34,7 @@ app:cardElevation="4dp">
         android:layout_marginStart="16dp">
 
         <TextView
-            android:id="@+id/asi_txt_nom"
+            android:id="@+id/itemasig_txt_asignatura"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nombre de la Asignatura"
@@ -43,7 +44,7 @@ app:cardElevation="4dp">
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/asi_txt_doc"
+            android:id="@+id/itemasig_txt_docente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nombre del docente"
@@ -52,7 +53,7 @@ app:cardElevation="4dp">
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/asi_txt_cod"
+            android:id="@+id/itemasig_txt_clavegrupo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Clave de la asignatura"
@@ -68,19 +69,7 @@ app:cardElevation="4dp">
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center_vertical"
-        android:layout_marginStart="12dp">
-
-        <!-- ImageView para "Editar" -->
-        <ImageView
-            android:id="@+id/itemasi_agg"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:src="@drawable/add_asi2"
-            android:contentDescription="Editar" />
-
-
-    </LinearLayout>
+        android:layout_marginStart="12dp"/>
 
 </LinearLayout>
 

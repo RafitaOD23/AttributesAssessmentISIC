@@ -65,7 +65,7 @@ Descripción: Layout de fragment asignaturas
                         android:layout_width="45dp"
                         android:layout_height="45dp"
                         android:layout_gravity="center"
-                        android:src="@drawable/buscar_asi"
+                        android:src="@drawable/add_class"
                         />
                 </LinearLayout>
             </LinearLayout>
@@ -83,21 +83,31 @@ Descripción: Layout de fragment asignaturas
             android:backgroundTint="@color/white">
 
             <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            >
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rec_list_asig"
-                android:visibility="visible"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:padding="15dp"
-                android:orientation="vertical"
                 >
-            </androidx.recyclerview.widget.RecyclerView>
-        </ScrollView>
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rec_list_asig"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="10dp"
+                    android:padding="5dp"
+                    android:orientation="vertical"
+                    android:scrollbarStyle="insideOverlay"
+                    app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+                    >
+                </androidx.recyclerview.widget.RecyclerView>
+            </ScrollView>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:gravity="center"
+                android:textColor="@color/gray"
+                android:id="@+id/tv_empty"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="No hay asignaturas registradas"
+                android:textSize="20sp"></TextView>
         </androidx.cardview.widget.CardView>
-
     </LinearLayout>
 </FrameLayout>
