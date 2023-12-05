@@ -12,10 +12,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -51,6 +54,11 @@ public class Login extends AppCompatActivity {
         txtUsuario = findViewById(R.id.login_txt_correo);
         txtPassword = findViewById(R.id.login_txt_contraseña);
         txtForgot = (TextView) findViewById(R.id.login_btn_forgetPassword);
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Window w = getWindow();
+            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        }
         txtForgot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

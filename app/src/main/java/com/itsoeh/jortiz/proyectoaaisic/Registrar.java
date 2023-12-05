@@ -8,16 +8,20 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayoutStates;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -44,6 +48,10 @@ public class Registrar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            Window w = getWindow();
+            w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        }
         txtNombre = findViewById(R.id.registro_txt_nombre);
         txtApellido = findViewById(R.id.registro_txt_apellido);
         txtCorreo = findViewById(R.id.registro_txt_correo);
@@ -78,9 +86,7 @@ public class Registrar extends AppCompatActivity {
             LayoutInflater inflater = this.getLayoutInflater();
             View view = inflater.inflate(R.layout.dialog_layout, null);
             builder.setView(view);
-
             AlertDialog dialog = builder.create();
-
             TextView title = view.findViewById(R.id.title);
             title.setText("Ocurrió un error");
             TextView message = view.findViewById(R.id.message);
@@ -124,19 +130,20 @@ public class Registrar extends AppCompatActivity {
                                                         startActivity(intent);
                                                     } catch (JSONException e) {
                                                         Toast.makeText(Registrar.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-                                                        Log.d(TAG, "" + e.getMessage());
+                                                        Log.d(ConstraintLayoutStates.TAG, "" + e.getMessage());
                                                     }
                                                 }
                                             }, new Response.ErrorListener() {
                                                 @Override
                                                 public void onErrorResponse(VolleyError error) {
                                                     Toast.makeText(Registrar.this, "Falló el registro" + error.getMessage(), Toast.LENGTH_SHORT).show();
-                                                    Log.d(TAG, "" + error.getMessage());
+                                                    Log.d(ConstraintLayoutStates.TAG, "" + error.getMessage());
+
                                                 }
                                             }) {
                                                 @Override
                                                 protected Map<String, String> getParams() {
-                                                    Map<String, String> parametros = new HashMap<>();
+                                                    Map<String, String> parametros = new HashMap<String, String>();
                                                     parametros.put("nombre", txtNombre.getText().toString());
                                                     parametros.put("apellido", txtApellido.getText().toString());
                                                     parametros.put("correo", txtCorreo.getText().toString());
@@ -161,12 +168,12 @@ public class Registrar extends AppCompatActivity {
                                                 startActivity(intent);
                                             }catch(Exception error){
                                                 Toast.makeText(Registrar.this, "Falló el registro" + error.getMessage(), Toast.LENGTH_SHORT).show();
-                                                Log.d(TAG, "" + error.getMessage());
+                                                Log.d(ConstraintLayoutStates.TAG, "" + error.getMessage());
                                             }
                                         }
                                     } catch (Exception e) {
                                         Toast.makeText(Registrar.this, "Falló el registro" +e.getMessage(), Toast.LENGTH_SHORT).show();
-                                        Log.d(TAG, e.toString());
+                                        Log.d(ConstraintLayoutStates.TAG, e.toString());
                                     }
                                 } else {
                                     AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -308,7 +315,6 @@ public class Registrar extends AppCompatActivity {
             }
         }
     }
-
     private void clicBack() {
         Intent brinco = new Intent(this, Login.class);
         startActivity(brinco);
